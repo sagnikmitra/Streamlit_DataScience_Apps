@@ -1,12 +1,12 @@
 # Load Pkgs
-import streamlit as st 
+import streamlit as st
 import matplotlib.pyplot as plt
 import os
 
 
 st.subheader("Frequently Asked Questions About Streamlit")
 
-## How to Show Help and Docs
+# How to Show Help and Docs
 st.subheader("How to Show Help and Docs?")
 # Method 1
 st.help(st)
@@ -15,13 +15,13 @@ st.help(st)
 result = dir(st)
 st.write(result)
 
-## How to Link to Pages
+# How to Link to Pages
 st.subheader("How to Link to Pages?")
 # Using Markdown
 st.markdown("[I'm an inline-style link](https://www.google.com)")
 
 
-## How to Show Pie Charts
+# How to Show Pie Charts
 st.subheader("How to Show Pie Charts")
 if st.checkbox("Show Pie Charts"):
 	labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
@@ -35,20 +35,21 @@ if st.checkbox("Show Pie Charts"):
 
 	st.pyplot()
 
-## How to Receive User Input
+# How to Receive User Input
 st.subheader("How to Receive User Input")
-name = st.text_input("Enter Your Name","Type Here")
+name = st.text_input("Enter Your Name", "Type Here")
 result_name = name.title()
 st.write(result_name)
 
-## How to do Upload of Files
+# How to do Upload of Files
 # Solution By Adrien Treuile @streamlit
-#NB New Updates may include this feature request
+# NB New Updates may include this feature request
+
+
 def file_selector(folder_path='.'):
 	    filenames = os.listdir(folder_path)
 	    selected_filename = st.selectbox('Select a file', filenames)
 	    return os.path.join(folder_path, selected_filename)
-
-	filename = file_selector()
-	st.write('You selected `%s`' % filename)
+filename = file_selector()
+st.write('You selected `%s`' % filename)
 
